@@ -1,0 +1,107 @@
+<!doctype html>
+<html>
+
+<head>
+    <style>
+        html {
+            height: 100%;
+        }
+        
+        ul {
+            position: relative;
+            /*height: 100px;*/
+        }
+        
+        li {
+            position: absolute;
+            /*display: block;*/
+            /*height: 100%;*/
+        }
+        
+        #a {
+            height: 100px;
+        }
+        
+        #a {
+            background: white;
+        }
+        
+        #b {
+            background: black;
+        }
+        
+        #c {
+            background: red;
+        }
+        
+        #b,
+        #c {
+            height: 100%;
+        }
+        
+        #c {
+            max-height: 50px;
+        }
+        
+        #aa {
+            width: 1200px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        #bb {
+            width: 100%;
+            position: absolute;
+        }
+        
+        #cc {
+            width: 100%;
+            position: absolute;
+            display: block;
+        }
+        
+        #dd {
+            width: 100%;
+            max-width: 500px;
+        }
+        
+        .container {
+            position: relative;
+        }
+        
+        .aside {
+            position: absolute;
+            width: 200px;
+            right: 0px;
+            top: 0px;
+        }
+        
+        .content {
+            margin-right: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>
+            <a>
+                <div>this is a absolute test</div>
+            </a>
+        </li>
+        <li></li>
+    </ul>
+    <div id="aa">
+        <ul id="bb">
+            <li id="cc">
+                <div id="dd"></div>
+            </li>
+        </ul>
+    </div>
+    <div class="container">
+        <div class="aside"></div>
+        <div class="content"></div>
+    </div>
+</body>
+
+</html>

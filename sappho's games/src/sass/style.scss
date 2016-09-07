@@ -1,0 +1,271 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+
+/* HTML5 display-role reset for older browsers */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+html {
+    font-size: 62.5%;
+    font-family: "Microsoft YaHei UI", SimSun, "Segoe UI", Arial, Sans-Serif!important;
+    height: 100%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    -webkit-box-sizing: inherit;
+    box-sizing: inherit;
+}
+
+body {
+    height: 100%;
+    font-size: 1em;
+    input,
+    button {
+        display: inline-block;
+    }
+    img[class*="icon-"] {
+        height: 1.5em;
+    }
+}
+
+$gray:#A9A9A9;
+$white:#fff;
+@mixin left {
+    float: left;
+}
+
+@mixin right {
+    float: right;
+}
+
+.header {
+    line-height: 3em;
+    list-style: none;
+    position: relative;
+    .header-wrapper {
+        width: 90%;
+        max-width: 1180px;
+        height: 6rem;
+        margin: 0 auto;
+        &:after {
+            content: "";
+            clear: both;
+        }
+        .header-wrapper-brand {
+            @include left;
+            img {
+                max-height: 6rem;
+                max-width: 6rem;
+                padding: 1rem 0;
+                /*内联元素使用上下相同的padding来垂直居中*/
+            }
+        }
+        .header-nav-wrapper {
+            font-size: 3em;
+            margin-left: 2rem;
+            @include left;
+            .header-nav {
+                li {
+                    @include left;
+                    line-height: 6rem;
+                    //内联元素的line-height
+                    padding: 0 1rem;
+                }
+            }
+        }
+        .header-user-control {
+            width: 30rem;
+            height: 6rem;
+            // line-height: 6rem;
+            @include right;
+            text-align: right;
+            form {
+                height: 6rem;
+                padding: 1.5rem 0;
+                //使form中的内联元素垂直居中
+                input,
+                button {
+                    height: 3rem;
+                    vertical-align: middle; //让input与button对齐
+                    border: 1px solid $gray;
+                }
+                input {
+                    border-right-style: none;
+                }
+                button {
+                    background-color: transparent;
+                    font-size: 2rem;
+                }
+                input+button {
+                    font-size: 1rem;
+                    border-left-style: none;
+                    margin-left: -4px;
+                }
+            }
+        }
+    }
+}
+
+#ContentBlockList_1 {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    .slides,
+    .slide {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    .slide {
+        //display: block;
+    }
+    .slide:first-child {
+        visibility: visible;
+    }
+    .responsivemaxwidthimg {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media(min-width: 1281px) {
+    .heroImage-mobile {
+        display: none;
+    }
+    .heroImage {
+        display: block;
+    }
+}

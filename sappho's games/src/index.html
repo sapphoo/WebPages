@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sappho's games</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="scripts/jquery-3.1.0.min.js"></script>
+    <script src="scripts/slide.js"></script>
+</head>
+
+<body>
+    <div class="header">
+        <div class="header-wrapper">
+            <div class="header-wrapper-brand">
+                <!--这个div以及下面两个div存在的原因：对元素分组指定样式-->
+                <img src="images/sappho.png" alt="sappho">
+            </div>
+            <div class="header-nav-wrapper">
+                <ul class="header-nav">
+                    <li>游戏分类</li>
+                    <li>支持</li>
+                </ul>
+            </div>
+            <div class="header-user-control">
+                <form>
+                    <input type="search" maxlength="200">
+                    <button class="search" type="submit"><image class="icon-search" src="images/search.png" alt="search"></button>
+                    <button class="login" type="button">登录</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="BodyContent" class="container">
+        <div id="ContentBlockList_1">
+            <ul class="slides">
+                <li id="item1" class="rotatoritem slide impressed">
+                    <a href="#">
+                        <div class="heroImage">
+                            <img src="images/item1.jpg" class="responsivemaxwidthimg">
+                        </div>
+                        <div class="heroImage-mobile">
+                            <img src="">
+                        </div>
+                    </a>
+                </li>
+                <li id="item2" class="rotatoritem slide impressed">
+                    <a href="#">
+                        <div class="heroImage">
+                            <img src="images/item2.jpg" class="responsivemaxwidthimg">
+                        </div>
+                        <div class="heroImage-mobile">
+                            <img src="">
+                        </div>
+                    </a>
+                </li>
+                <li id="item3" class="rotatoritem slide impressed">
+                    <a href="#">
+                        <div class="heroImage">
+                            <img src="images/item3.jpg" class="responsivemaxwidthimg">
+                        </div>
+                        <div class="heroImage-mobile">
+                            <img src="">
+                        </div>
+                    </a>
+                </li>
+                <li id="item4" class="rotatoritem slide impressed">
+                    <a href="#">
+                        <div class="heroImage">
+                            <img src="images/item4.jpg" class="responsivemaxwidthimg">
+                        </div>
+                        <div class="heroImage-mobile">
+                            <img src="">
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div id="ContentBlockList_2"></div>
+    </div>
+
+</body>
+
+</html>

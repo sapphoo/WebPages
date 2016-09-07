@@ -11,23 +11,23 @@ var rename = require('gulp-rename'); //重命名
 
 // 检查js脚本的任务
 gulp.task('lint', function() {
-    gulp.src('./scripts/*.js') //可配置你需要检查脚本的具体名字。
+    gulp.src('./src/scripts/*.js') //可配置你需要检查脚本的具体名字。
         .pipe(jshint())
         .pipe(jshint.reporter('default'));
 });
 
 // 编译Sass
 gulp.task('sass', function() {
-    gulp.src('./sass/*.scss')
+    gulp.src('./src/sass/*.scss')
         .pipe(sass())
-        .pipe(gulp.dest('./css')); //dest()写入文件
+        .pipe(gulp.dest('./src/css')); //dest()写入文件
 });
 
 
 // 合并，压缩js文件
 // 找到 js/ 目录下的所有 js 文件，压缩，重命名，最后将处理完成的js存放在 dist/js/ 目录下
 gulp.task('scripts', function() {
-    gulp.src('./scripts/*.js')
+    gulp.src('./src/scripts/*.js')
         .pipe(concat('all.js'))
         .pipe(gulp.dest('./dist'))
         .pipe(rename('all.min.js'))
@@ -44,9 +44,9 @@ gulp.task('default', function() {
     gulp.run('lint', 'sass', 'scripts');
 
     // 监听js文件变化，当文件发生变化后会自动执行任务
-    gulp.watch('./scripts/*.js', function() {
+    gulp.watch('./src/scripts/*.js', function() {
         gulp.run('lint', 'scripts');
     });
 
-    gulp.watch('./sass/*.scss', ['sass']);
+    gulp.watch('./src/sass/*.scss', ['sass']);
 });

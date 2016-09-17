@@ -68,7 +68,7 @@ $(document).ready(function() {
 
 
 
-        if (slides_i < slideindex - 1) {
+        if (slides_i < slideindex) {
             slides.css({
                 transform: 'translate(' + (-win_width) * slides_i + 'px,0px)',
                 transition: 'all 500ms ease'
@@ -78,14 +78,15 @@ $(document).ready(function() {
             //console.log(slides_i);
         } else {
             slides.animate({
-                transform: 'translate(' + (-win_width) * slides_i + 'px,0px)',
+                transform: 'translate(' + (-win_width) * slides_i + 'px,0px)'
             }, 500, function() {
+                slides_i = 0;
                 $(this).css({
                     transform: 'translate(0px,0px)',
                     transition: 'all 0ms ease'
                 });
             });
-            slides_i = 0;
+
             // slides.css({
             //     transform: 'translate(' + (-win_width) * slides_i + 'px,0px)',
             //     transition: 'all 500ms ease'

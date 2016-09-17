@@ -87,29 +87,7 @@ $(document).ready(function() {
                 });
             });
 
-            // slides.css({
-            //     transform: 'translate(' + (-win_width) * slides_i + 'px,0px)',
-            //     transition: 'all 500ms ease'
-            // }).css({
-            //     transform: 'translate(' + '0px,0px)',
-            //     transition: 'all 0ms ease'
-            // });
-
         }
-
-        // slide.each(function() {
-        //     var left = parseInt($(this).css('left')) - win_width;
-        //     $(this).css('left', left + 'px');
-        // });
-
-
-        // var j = 0;
-        // slide.each(function(i) {
-        //     $(this).css({
-        //         left: win_width * j + "px",
-        //     });
-        //     j++;
-        // });
 
     }
 

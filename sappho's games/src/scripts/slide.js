@@ -52,7 +52,7 @@ $(document).ready(function() {
         //设置ul的宽度为所有图片加起来的宽度
         slides.css({
             width: win_width * slideindex + 'px',
-            transition: 'all 500ms ease'
+
 
         });
 
@@ -60,18 +60,27 @@ $(document).ready(function() {
 
     //定时轮播图片
 
-    setInterval(rollSlizes(), 3000);
+    setInterval(rollSlizes, 3000);
 
     function rollSlizes() {
 
         var win_width = $(window).width();
 
-        slides.css('transform', 'translate(' + (-win_width) * slides_i + 'px,0px)');
+
+
         if (slides_i < slideindex) {
+            slides.css({
+                transform: 'translate(' + (-win_width) * slides_i + 'px,0px)',
+                transition: 'all 500ms ease'
+            });
             slides_i++;
-            console.log(slides_i);
+            //console.log(slides_i);
         } else {
             slides_i = 0;
+            slides.css({
+                transform: 'translate(' + (-win_width) * slides_i + 'px,0px)',
+                transition: 'all 0ms ease'
+            });
         }
 
         // slide.each(function() {

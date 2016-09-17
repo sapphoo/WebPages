@@ -57,6 +57,15 @@ $(document).ready(function() {
     }
 
     //定时轮播图片
+    // function play() {
+
+    //     var interid = setInterval(rollSlizes, 2000);
+    //     return interid;
+    // }
+
+    // function stop() {
+    //     clearInterval(interid);
+    // }
 
     setInterval(rollSlizes, 2000);
 
@@ -73,11 +82,12 @@ $(document).ready(function() {
             });
             slides_i++;
         } else {
+            slides.css({ transition: 'all 0ms ease' });
             slides.animate({
                 //transform: 'translate(' + (-win_width) * slides_i + 'px,0px)',
-                left: (-win_width) * slides_i + 'px',
+                left: (-win_width) * slides_i + 'px'
             }, 500, function() {
-                slides_i = 0;
+                slides_i = 1;
                 $(this).css({
                     //transform: 'translate(0px,0px)',
                     left: 0,
@@ -88,6 +98,9 @@ $(document).ready(function() {
         }
 
     }
+
+    // blockList_1.hover(stop, play);
+    // play();
 
 
 

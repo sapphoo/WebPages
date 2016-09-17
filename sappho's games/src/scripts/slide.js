@@ -52,37 +52,35 @@ $(document).ready(function() {
         //设置ul的宽度为所有图片加起来的宽度
         slides.css({
             width: win_width * slideindex + 'px',
-
-
         });
 
     }
 
     //定时轮播图片
 
-    setInterval(rollSlizes, 1500);
+    setInterval(rollSlizes, 2000);
 
     function rollSlizes() {
 
         var win_width = $(window).width();
 
-
-
-        if (slides_i < slideindex) {
+        if (slides_i < slideindex - 1) {
             slides.css({
-                transform: 'translate(' + (-win_width) * slides_i + 'px,0px)',
+                //transform: 'translate(' + (-win_width) * slides_i + 'px,0px)',
+                left: (-win_width) * slides_i + 'px',
                 transition: 'all 500ms ease'
 
             });
             slides_i++;
-            //console.log(slides_i);
         } else {
             slides.animate({
-                transform: 'translate(' + (-win_width) * slides_i + 'px,0px)'
+                //transform: 'translate(' + (-win_width) * slides_i + 'px,0px)',
+                left: (-win_width) * slides_i + 'px',
             }, 500, function() {
                 slides_i = 0;
                 $(this).css({
-                    transform: 'translate(0px,0px)',
+                    //transform: 'translate(0px,0px)',
+                    left: 0,
                     transition: 'all 0ms ease'
                 });
             });

@@ -4,6 +4,12 @@ $(document).ready(function() {
     var blockList_1 = $("#ContentBlockList_1"); //document.getElementById("ContentBlockList_1")
     var slides = $(".slides"); //document.getElementsByClassName("slides");
     var slide = $(".slide"); //document.getElementsByClassName("slides")
+    var slideindex = 0;
+
+    slide.each(function() {
+        slideindex++;
+    })
+    var slides_i = 0;
     sizeSlides();
     $(window).resize(function() {
         //js: window.onresize = function a(){};
@@ -11,6 +17,7 @@ $(document).ready(function() {
         sizeSlides();
 
     });
+
 
     function sizeSlides() {
         //var win_width = $(window).width();
@@ -29,12 +36,13 @@ $(document).ready(function() {
             count: function() {
                 this.index++
             }
-        }
-        slide.each(function(i) {
+        };
+        slide.each(function() {
             $(this).css({
                 left: win_width * slideIndex.index + "px",
                 "max-width": win_width + "px"
             });
+
             slideIndex.count();
         });
         //因为li的height设置为100%，所以要防止每个li充满ul，那样img会被拉伸(因为图片的height也为100%)
@@ -43,13 +51,44 @@ $(document).ready(function() {
 
         //设置ul的宽度为所有图片加起来的宽度
         slides.css({
-            width: win_width * slideIndex.index,
+            width: win_width * slideindex + 'px',
+            transition: 'all 500ms ease'
 
         });
 
     }
 
     //定时轮播图片
+
+    setInterval(rollSlizes(), 3000);
+
+    function rollSlizes() {
+
+        var win_width = $(window).width();
+
+        slides.css('transform', 'translate(' + (-win_width) * slides_i + 'px,0px)');
+        if (slides_i < slideindex) {
+            slides_i++;
+            console.log(slides_i);
+        } else {
+            slides_i = 0;
+        }
+
+        // slide.each(function() {
+        //     var left = parseInt($(this).css('left')) - win_width;
+        //     $(this).css('left', left + 'px');
+        // });
+
+
+        // var j = 0;
+        // slide.each(function(i) {
+        //     $(this).css({
+        //         left: win_width * j + "px",
+        //     });
+        //     j++;
+        // });
+
+    }
 
 
 
